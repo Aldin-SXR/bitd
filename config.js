@@ -50,5 +50,6 @@ module.exports = {
     'version': '0.2.0',
     'from': Number.parseInt(process.env.core_from ? process.env.core_from : 525470),
     'verbose': process.env.core_verbose ? process.env.core_verbose : false
-  }
+  },
+  'use_indices': process.env.use_indices ? (process.env.use_indices === 'true') : true
 }

@@ -15,13 +15,15 @@ const daemon = {
     // 2. Bootstrap actions depending on first time
     const lastSynchronized = await Info.checkpoint()
 
-    console.time('Indexing Keys')
     if (lastSynchronized === Config.core.from) {
       // First time. Try indexing
       console.log('Indexing...', new Date())
-      await Db.block.index()
+      if (Config.use_indices) {
+        console.time('Indexing Keys')
+        await Db.block.index()
+        console.timeEnd('Indexing Keys')
+      }
     }
-    console.timeEnd('Indexing Keys')
 
     if (lastSynchronized !== Config.core.from) {
       // Resume
