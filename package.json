@@ -10,7 +10,7 @@
     "lint": "./node_modules/.bin/eslint ."
   },
   "dependencies": {
-    "fountainhead-core": "git+https://github.com/Aldin-SXR/fountainhead-core.git",
+    "fountainhead-core": "https://github.com/Aldin-SXR/fountainhead-core.git",
     "iconv-lite": "^0.4.24",
     "level": "^4.0.0",
     "p-limit": "^2.2.0",
